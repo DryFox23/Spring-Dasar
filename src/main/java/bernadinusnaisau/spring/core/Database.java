@@ -1,0 +1,13 @@
+package bernadinusnaisau.spring.core;
+
+public class Database {
+
+    public static Database database;
+
+    public static Database getInstance() {
+        if (database == null) {
+            database = new Database();
+        }
+        return database;
+    }
+}
