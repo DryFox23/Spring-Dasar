@@ -18,12 +18,12 @@ ApplicationContext context;
 
     @Test
     void testDepedencyInjection() {
-        Foo foo = context.getBean(Foo.class);
+        Foo foo = context.getBean("fooSecond",Foo.class);
         Bar bar = context.getBean(Bar.class);
         FooBar fooBar = context.getBean(FooBar.class);
 
-        Assertions.assertEquals(foo, fooBar.getFoo());
-        Assertions.assertEquals(bar, fooBar.getBar());
+       Assertions.assertEquals(foo, fooBar.getFoo());
+       Assertions.assertEquals(bar, fooBar.getBar());
 
     }
 }
