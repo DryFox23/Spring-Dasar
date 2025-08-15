@@ -1,6 +1,7 @@
 package bernadinusnaisau.spring.core;
 
 import bernadinusnaisau.spring.core.data.Connection;
+import bernadinusnaisau.spring.core.data.cyclick.Server;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
@@ -20,5 +21,10 @@ public class LifecycleTest {
     @Test
     void testConnection() {
         Connection connection = context.getBean(Connection.class);
+    }
+
+    @Test
+    void testServer() {
+        Server server = context.getBean(Server.class);
     }
 }
