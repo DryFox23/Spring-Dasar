@@ -1,4 +1,4 @@
-package bernadinusnaisau.spring.core;
+package bernadinusnaisau.spring.core.configuration;
 
 import bernadinusnaisau.spring.core.data.Foo;
 import org.springframework.context.annotation.Bean;
