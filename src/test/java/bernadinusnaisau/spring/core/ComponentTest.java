@@ -1,6 +1,5 @@
 package bernadinusnaisau.spring.core;
 
-import bernadinusnaisau.spring.core.data.Foo;
 import bernadinusnaisau.spring.core.repository.ProductRepository;
 import bernadinusnaisau.spring.core.service.ProductService;
 import org.junit.jupiter.api.Assertions;
