@@ -4,7 +4,7 @@ import bernadinusnaisau.spring.core.repository.CategoryRepository;
 import bernadinusnaisau.spring.core.repository.CustomerRepository;
 import bernadinusnaisau.spring.core.repository.ProductRepository;
 import bernadinusnaisau.spring.core.service.CategoryService;
-import bernadinusnaisau.spring.core.service.CostumerService;
+import bernadinusnaisau.spring.core.service.CustomerService;
 import bernadinusnaisau.spring.core.service.ProductService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -50,7 +50,7 @@ public class ComponentTest {
 
     @Test
     void testDiComponentUsingField() {
-        CostumerService costumerService = context.getBean(CostumerService.class);
+        CustomerService costumerService = context.getBean(CustomerService.class);
         CustomerRepository customerRepository = context.getBean(CustomerRepository.class);
 
         Assertions.assertSame(customerRepository, costumerService.getCustomerRepository());
