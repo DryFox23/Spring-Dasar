@@ -1,6 +1,8 @@
 package bernadinusnaisau.spring.core;
 
+import bernadinusnaisau.spring.core.repository.CategoryRepository;
 import bernadinusnaisau.spring.core.repository.ProductRepository;
+import bernadinusnaisau.spring.core.service.CategoryService;
 import bernadinusnaisau.spring.core.service.ProductService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -33,5 +35,14 @@ public class ComponentTest {
         ProductService productService = context.getBean(ProductService.class);
         ProductRepository productRepository = context.getBean(ProductRepository.class);
         Assertions.assertSame(productRepository, productService.getProductRepository());
+    }
+
+    @Test
+    void testDiComponentUsingSetter() {
+        CategoryService categoryService = context.getBean(CategoryService.class);
+        Assertions.assertNotNull(categoryService);
+
+        CategoryRepository categoryRepository = context.getBean(CategoryRepository.class);
+        Assertions.assertSame(categoryRepository, categoryService.getCategoryRepository());
     }
 }
