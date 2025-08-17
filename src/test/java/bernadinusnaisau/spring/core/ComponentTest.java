@@ -1,6 +1,7 @@
 package bernadinusnaisau.spring.core;
 
 import bernadinusnaisau.spring.core.data.Foo;
+import bernadinusnaisau.spring.core.repository.ProductRepository;
 import bernadinusnaisau.spring.core.service.ProductService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -26,8 +27,12 @@ public class ComponentTest {
         Assertions.assertSame(productService1, productService2);
     }
 
+
+
     @Test
-    void testFoo() {
-        Foo foo = context.getBean(Foo.class);
+    void testDiComponent() {
+        ProductService productService = context.getBean(ProductService.class);
+        ProductRepository productRepository = context.getBean(ProductRepository.class);
+        Assertions.assertSame(productRepository, productService.getProductRepository());
     }
 }
