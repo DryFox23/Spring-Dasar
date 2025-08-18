@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Configuration;
 @ComponentScan(basePackages = {
         "bernadinusnaisau.spring.core.repository",
         "bernadinusnaisau.spring.core.service",
+        "bernadinusnaisau.spring.core.configuration"
 })
 public class ComponentConfiguration {
 }
