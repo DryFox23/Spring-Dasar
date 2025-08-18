@@ -1,5 +1,6 @@
 package bernadinusnaisau.spring.core;
 
+import bernadinusnaisau.spring.core.data.MultiFoo;
 import bernadinusnaisau.spring.core.repository.CategoryRepository;
 import bernadinusnaisau.spring.core.repository.CustomerRepository;
 import bernadinusnaisau.spring.core.repository.ProductRepository;
@@ -56,5 +57,11 @@ public class ComponentTest {
 
         Assertions.assertSame(costumerService.getNormalCustomerRepository(), normaCustomerRepository);
         Assertions.assertSame(premiumCustomerRepository,costumerService.getPremiumCustomerRepository());
+    }
+
+    @Test
+    void testObjectProvider() {
+        MultiFoo multiFoo = context.getBean(MultiFoo.class);
+        Assertions.assertEquals(4, multiFoo.getFoos().size());
     }
 }
