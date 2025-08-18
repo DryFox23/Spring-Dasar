@@ -51,8 +51,10 @@ public class ComponentTest {
     @Test
     void testDiComponentUsingField() {
         CustomerService costumerService = context.getBean(CustomerService.class);
-        CustomerRepository customerRepository = context.getBean(CustomerRepository.class);
+        CustomerRepository normaCustomerRepository = context.getBean("normalCustomerRepository",CustomerRepository.class);
+        CustomerRepository premiumCustomerRepository = context.getBean("premiumCustomerRepository",CustomerRepository.class);
 
-        Assertions.assertSame(customerRepository, costumerService.getCustomerRepository());
+        Assertions.assertSame(costumerService.getNormalCustomerRepository(), normaCustomerRepository);
+        Assertions.assertSame(premiumCustomerRepository,costumerService.getPremiumCustomerRepository());
     }
 }
