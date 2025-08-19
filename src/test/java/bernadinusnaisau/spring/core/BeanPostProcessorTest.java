@@ -22,4 +22,11 @@ public class BeanPostProcessorTest {
         System.out.println(car);
         Assertions.assertNotNull(car);
     }
+
+    @Test
+    void testPrefix() {
+        Car car = context.getBean(Car.class);
+        Assertions.assertNotNull(car);
+        System.out.println(car.getId());
+    }
 }
