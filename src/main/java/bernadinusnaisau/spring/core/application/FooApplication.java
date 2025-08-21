@@ -2,11 +2,14 @@ package bernadinusnaisau.spring.core.application;
 
 import bernadinusnaisau.spring.core.data.Bar;
 import bernadinusnaisau.spring.core.data.Foo;
+import bernadinusnaisau.spring.core.listener.AppStartingListener;
 import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
+
+import java.util.List;
 
 @SpringBootConfiguration
 public class FooApplication {
@@ -25,6 +28,7 @@ public class FooApplication {
     public static void main(String[] args) {
         SpringApplication app = new SpringApplication(FooApplication.class);
         app.setBannerMode(Banner.Mode.OFF);
+        app.setListeners(List.of(new AppStartingListener()));
 
         ConfigurableApplicationContext context = app.run(args);
         Foo foo = context.getBean(Foo.class);
