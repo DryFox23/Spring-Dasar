@@ -1,5 +1,6 @@
 package bernadinusnaisau.spring.core.application;
 
+import bernadinusnaisau.spring.core.data.Bar;
 import bernadinusnaisau.spring.core.data.Foo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.SpringBootConfiguration;
@@ -10,7 +11,7 @@ import org.springframework.context.annotation.Bean;
 public class FooApplication {
 
     @Bean(value = "Foo Bean")
-    public Foo foo(){
+    public Foo foo(Bar bar) {
         return new Foo();
     }
 
